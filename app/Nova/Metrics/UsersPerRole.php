@@ -32,7 +32,7 @@ class UsersPerRole extends Partition
             })
             ->colors([
                 'user' => '#6F1A07',
-                'admin' => '#2B2118',
+                'admin' => '#AF9164',
                 'moderatore' => '#F7F3E3',
             ]);
     }

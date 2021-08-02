@@ -8,12 +8,9 @@ use Laravel\Nova\Metrics\Trend;
 
 class UsersPerDay extends Trend
 {
-    /**
-     * Calculate the value of the metric.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return mixed
-     */
+
+    public $name = 'Utenti per giorni';
+
     public function calculate(NovaRequest $request)
     {
         return $this->countByDays($request, User::class);

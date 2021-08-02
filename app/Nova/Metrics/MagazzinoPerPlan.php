@@ -2,18 +2,18 @@
 
 namespace App\Nova\Metrics;
 
-use App\Models\User;
+use App\Models\Magazzino;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
 
-class UsersPerPlan extends Partition
+class MagazzinoPerPlan extends Partition
 {
 
-    public $name = 'Utenti per ruolo';
+    public $name = 'Statistiche pratiche';
 
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, User::class, 'role');
+        return $this->count($request, Magazzino::class, 'note');
     }
 
     /**
@@ -23,7 +23,7 @@ class UsersPerPlan extends Partition
      */
     public function cacheFor()
     {
-        return now()->addMinutes(5);
+        // return now()->addMinutes(5);
     }
 
     /**
@@ -33,6 +33,6 @@ class UsersPerPlan extends Partition
      */
     public function uriKey()
     {
-        return 'users-per-plan';
+        return 'magazzino-per-plan';
     }
 }

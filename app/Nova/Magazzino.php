@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\Utente;
 use App\Nova\Filters\MagazzinoperUtente;
+use App\Nova\Metrics\MagazzinoPerPlan;
 use App\Nova\Metrics\magazzinosperDay;
 use App\Nova\Metrics\NewUsers;
 use App\Nova\Resource;
@@ -98,7 +99,7 @@ class Magazzino extends Resource
     public function cards(Request $request)
     {
         return [
-            (new magazzinosperDay),
+            (new MagazzinoPerPlan),
         ];
     }
 

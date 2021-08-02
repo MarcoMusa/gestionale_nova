@@ -8,12 +8,9 @@ use Laravel\Nova\Metrics\Value;
 
 class NewUsers extends Value
 {
-    /**
-     * Calculate the value of the metric.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return mixed
-     */
+
+    public $name = 'Nuovi Utenti';
+
     public function calculate(NovaRequest $request)
     {
         return $this->count($request, User::class);
