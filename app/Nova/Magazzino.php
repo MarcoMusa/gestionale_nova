@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\Utente;
 use App\Nova\Filters\MagazzinoperUtente;
 use App\Nova\Resource;
 use Laravel\Nova\Fields\ID;
@@ -77,7 +78,7 @@ class Magazzino extends Resource
 
             ]),
 
-            Date::make(__('Chiusa il'), 'created_at')
+            Date::make(__('Chiuso il'), 'created_at')
                 ->format('DD/MM/YYYY'),
 
 
@@ -129,6 +130,8 @@ class Magazzino extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new Utente),
+        ];
     }
 }

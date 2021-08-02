@@ -1,6 +1,7 @@
 {
     "Nome":"Name",
     "E-mail":"Email",
-    "Password":"Password"
+    "Password":"Password",
+    "Magazzino":"Magazzinos"
 
 }
