@@ -13,7 +13,12 @@ class MagazzinoPerPlan extends Partition
 
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, Magazzino::class, 'note');
+        return $this->count($request, Magazzino::class, 'note')
+            ->colors([
+                'Pratiche chiuse' => '#6F1A07',
+                'Pratiche In Lavorazione' => '#AF9164',
+
+            ]);
     }
 
     /**

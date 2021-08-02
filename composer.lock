@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa07e8bdba030ffde69d69b3001f6481",
+    "content-hash": "6a412721c58d19e76b7f3c4bf6d0b14d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1195,6 +1195,42 @@
                 }
             ],
             "time": "2021-04-26T11:24:25+00:00"
+        },
+        {
+            "name": "gestionale/dashboard",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Dashboard",
+                "reference": "d2b512c5d41d4702cd0720260c5efd638c5aca0d"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gestionale\\Dashboard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gestionale\\Dashboard\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "graham-campbell/result-type",

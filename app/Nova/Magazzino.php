@@ -18,6 +18,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Line;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -63,25 +64,24 @@ class Magazzino extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Textarea::make(__('Note'), 'note')
-                ->alwaysShow()
-                ->rows(1),
+            Select::make(__('Stato'), 'note')
+                ->options([
+                    'In Lavorazione' => 'In Lavorazione',
+                    'Chiusa' => 'Chiusa',
+
+                ]),
 
             Boolean::make(__('Accettato'), 'accettato')
                 ->sortable(),
 
             BelongsTo::make(__('Utente'), 'user', User::class),
 
-            DateTime::make(__('Preso in carico il'), 'updated_at')
+            DateTime::make(__('Presa in carico il'), 'updated_at')
                 ->format('DD/MM/YYYY - hh:mm')
                 ->onlyOnIndex(),
 
-            Stack::make(__('Note'), 'Details', [
-                Line::make('note')->extraClasses('italic font-medium text-80'),
 
-            ]),
-
-            Date::make(__('Chiuso il'), 'created_at')
+            Date::make(__('Chiusa il'), 'created_at')
                 ->format('DD/MM/YYYY'),
 
 
