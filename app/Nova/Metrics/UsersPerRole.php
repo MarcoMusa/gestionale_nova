@@ -6,6 +6,7 @@ use App\Models\User;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
 
+
 class UsersPerRole extends Partition
 {
     /**
@@ -16,7 +17,24 @@ class UsersPerRole extends Partition
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, User::class, 'role');
+        return $this->count($request, User::class, 'role')
+            ->label(function ($value) {
+                switch ($value) {
+                    case null:
+                        return '-';
+                    case 'user':
+                        return 'Utente';
+                    case 'admin':
+                        return 'Amministratore';
+                    default:
+                        return ucfirst($value);
+                }
+            })
+            ->colors([
+                'user' => '#6F1A07',
+                'admin' => '#2B2118',
+                'moderatore' => '#F7F3E3',
+            ]);
     }
 
     /**
