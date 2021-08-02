@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\Utente;
 use App\Nova\Filters\MagazzinoperUtente;
+use App\Nova\Metrics\magazzinosperDay;
 use App\Nova\Metrics\NewUsers;
 use App\Nova\Resource;
 use Laravel\Nova\Fields\ID;
@@ -96,7 +97,9 @@ class Magazzino extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new magazzinosperDay),
+        ];
     }
 
     /**
