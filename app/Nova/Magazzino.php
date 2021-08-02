@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\Utente;
 use App\Nova\Filters\MagazzinoperUtente;
+use App\Nova\Metrics\NewUsers;
 use App\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -131,7 +132,7 @@ class Magazzino extends Resource
     public function actions(Request $request)
     {
         return [
-            (new Utente),
+            (new Utente)->showOnTablerow(),
         ];
     }
 }
