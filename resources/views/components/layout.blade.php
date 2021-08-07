@@ -17,6 +17,8 @@
     {{$slot}}
 
 
+
+
 {{-- asset JS --}}
 <script src="{{asset('js/app.js')}}"></script>
 </wbody>

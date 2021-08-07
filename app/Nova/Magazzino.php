@@ -71,6 +71,8 @@ class Magazzino extends Resource
 
                 ]),
 
+            Text::make(__('Prezzo'), 'price'),
+
             Boolean::make(__('Accettato'), 'accettato')
                 ->sortable(),
 

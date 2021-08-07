@@ -16,6 +16,7 @@ class CreateMagazzinosTable extends Migration
         Schema::create('magazzinos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('SET NULL');
+            $table->string('price');
             $table->string('prodotto');
             $table->text('note')->nullable();
             $table->boolean('accettato')->default(false);

@@ -92,9 +92,9 @@ class User extends Resource
     public function cards(Request $request)
     {
         return [
-            (new NewUsers),
-            (new UsersPerDay),
-            (new UsersPerRole),
+            (new NewUsers)->width('1/2'),
+            (new UsersPerDay)->width('1/2'),
+            (new UsersPerRole)->width('full'),
         ];
     }
 

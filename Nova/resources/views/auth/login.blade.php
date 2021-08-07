@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('nova::auth.partials.header')
+
 
 <form
     class="bg-white shadow rounded-lg p-8 max-w-login mx-auto"
@@ -12,7 +12,7 @@
     {{ csrf_field() }}
 
     @component('nova::auth.partials.heading')
-        {{ __('Welcome Back!') }}
+        {{ __('Gestionale di Magazzino') }}
     @endcomponent
 
     @if ($errors->any())
@@ -45,7 +45,7 @@
         @if (\Laravel\Nova\Nova::resetsPasswords())
         <div class="ml-auto">
             <a class="text-primary dim font-bold no-underline" href="{{ route('nova.password.request') }}">
-                {{ __('Forgot Your Password?') }}
+                {{ __('Hai dimenticato la Password?') }}
             </a>
         </div>
         @endif
